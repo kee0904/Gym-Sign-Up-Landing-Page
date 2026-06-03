@@ -29,7 +29,7 @@
           <a href="#outcomes">Outcomes</a>
           <a href="#pricing">Access</a>
         </nav>
-        <a class="header-cta" href="#free-training">Free 45-min training</a>
+        <button class="header-cta" type="button" data-open-signup data-offer="Free intro training">Free 45-min training</button>
       </header>
 
       <main id="top">
@@ -44,8 +44,8 @@
               structured process for market structure, risk, execution, and review.
             </p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="#pricing">Get lifetime access</a>
-              <a class="btn btn-secondary" href="#free-training">Watch intro</a>
+              <button class="btn btn-primary" type="button" data-open-signup data-offer="Lifetime course access">Get lifetime access</button>
+              <button class="btn btn-secondary" type="button" data-open-signup data-offer="Free intro training">Watch intro</button>
             </div>
             <div class="hero-stats" aria-label="Course highlights">
               <div>
@@ -211,16 +211,63 @@
               training focused on planning, risk, disciplined execution, and review.
             </p>
             <div class="price">$999</div>
-            <a class="btn btn-primary" href="mailto:hello@mindpillar.example?subject=MindPillar%20Course%20Access">Request access</a>
+            <button class="btn btn-primary" type="button" data-open-signup data-offer="Lifetime course access">Request access</button>
           </div>
           <div class="free-card" id="free-training">
             <span class="badge">Free intro</span>
             <h3>45-minute training</h3>
             <p>Preview the MindPillar approach to entries, risk, review, and the D-line strategy.</p>
-            <a href="mailto:hello@mindpillar.example?subject=Free%2045-minute%20training">Reserve your seat →</a>
+            <button class="text-link" type="button" data-open-signup data-offer="Free intro training">Reserve your seat →</button>
           </div>
         </section>
       </main>
+    </div>
+
+
+    <div class="signup-modal" id="signup-modal" aria-hidden="true">
+      <div class="modal-backdrop" data-close-signup></div>
+      <section
+        class="signup-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="signup-title"
+        aria-describedby="signup-copy"
+      >
+        <button class="modal-close" type="button" aria-label="Close sign up form" data-close-signup>×</button>
+        <p class="eyebrow orange">Start with a plan</p>
+        <h2 id="signup-title">Sign up for MindPillar</h2>
+        <p id="signup-copy">
+          Tell us where to send access details. We will follow up with the right
+          next step for your selected MindPillar training path.
+        </p>
+        <form class="signup-form" action="#" method="post">
+          <label>
+            <span>Full name</span>
+            <input type="text" name="name" autocomplete="name" placeholder="Your name" required />
+          </label>
+          <label>
+            <span>Email address</span>
+            <input type="email" name="email" autocomplete="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            <span>Training interest</span>
+            <select name="offer" id="signup-offer">
+              <option>Lifetime course access</option>
+              <option>Free intro training</option>
+            </select>
+          </label>
+          <label>
+            <span>Trading experience</span>
+            <select name="experience">
+              <option>New to trading</option>
+              <option>Some experience, need structure</option>
+              <option>Active trader improving discipline</option>
+            </select>
+          </label>
+          <button class="btn btn-primary modal-submit" type="submit">Submit sign up</button>
+          <p class="form-note" role="status" aria-live="polite"></p>
+        </form>
+      </section>
     </div>
     <script src="script.js"></script>
   </body>
